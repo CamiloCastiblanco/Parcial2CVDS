@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.eci.pdsw.samples.persistence.mybatisimpl.mappers.ConsultaMapper">
+    <resultMap type='Consulta' id='ConsultaResult'>
+        <id property='idCONSULTAS' column='idCONSULTAS'/>
+        <result property='fechayhora' column='fecha_y_hora'/>
+        <result property='resumen' column='resumen'/>
+        <result property='PACIENTESid' column='PACIENTES_id'/>
+        <result property='PACIENTEStipoid' column='PACIENTES_tipo_id'/>
+    </resultMap>
+    <select id="getConsultas" resultMap="ConsultaResult">
+        SELECT
+        p.fecha_nacimiento,
+        p.nombre,
+        c.resumen
+        FROM
+        PACIENTES as p
+        INNER JOIN Consultas as c ON p.id = c.PACIENTES_id
+        WHERE p.id = #{id} AND p.tipo_id = #{tipo_id}
+        ORDER BY c.fecha_y_hora DESC;
+    </select>
+</mapper>
