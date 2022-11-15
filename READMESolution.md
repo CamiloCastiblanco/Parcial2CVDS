@@ -1,6 +1,6 @@
-##Solucion
+## Solucion
 
-####Para cumplir con las HU se tuvo que completar el Proyecto para que la parte de consultas sirviera y asi poder consultar todo como es requerido.
+#### Para cumplir con las HU se tuvo que completar el Proyecto para que la parte de consultas sirviera y asi poder consultar todo como es requerido.
 
 - tree
 
