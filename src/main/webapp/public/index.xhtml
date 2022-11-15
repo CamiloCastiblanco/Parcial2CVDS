@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:body style="font-family: 'Oswald', sans-serif; background-color:rgba(218, 218, 221, 0.932);">
+    <div id="cover-caption">
+        <div class="container">
+            <div class="card">
+                <div class="row text-blue">
+                        <div class="px-2">
+                            <p:messages>
+                                <p:autoUpdate />
+                            </p:messages>
+                            <h:form class="justify-content-center">
+                                <div class="btn-group " role="group" aria-label="Basic example">
+                                    <label for="id" style="font-size:250%">ID</label>
+                                    <input style=" height: 50px ; font-size: 40px" id="id" type="Integer"
+                                           class="form-control" name="id" value="#{ConsultaBean.id}"  autofocus="true"
+                                           jsf:value="#{ConsultasBean.id}"/>
+                                    <h:selectOneMenu id="TiposID" value="#{ConsultasBean.tipo_id}" class="form-control"  autofocus="true"  >
+                                        <f:selectItem itemLabel="Seleccionar Categoria" noSelectionOption="true"/>
+                                        <f:selectItems value="#{ConsultasBean.getTipos}"/>
+                                    </h:selectOneMenu>
+                                    <p:commandButton class="btn btn-primary" value="Consultar paciente" actionListener="#{ConsultasBean.getData}" action="#{ConsultasBean.redirect}"/>
+                                </div>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</h:body>
+</html>

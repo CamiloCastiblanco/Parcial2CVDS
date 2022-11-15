@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:body>
+    <h1>ID</h1>
+    <h1>Tipo</h1>
+    <p:dataTable id = "data" value="#{PacientesBean.getConsultas}" var="consulta" border="2">
+        <p:column>
+            <f:facet name="header" >Id</f:facet>
+            <h:outputText class="text-center mx-auto" value="#{consulta.id}" />
+        </p:column>
+        <p:column>
+            <f:facet name="header">Fecha</f:facet>
+            <h:outputText class="text-center mx-auto" value="#{consulta.fechayHora}" />
+        </p:column>
+
+        <p:column>
+            <f:facet name="header">Resumen</f:facet>
+            <h:outputText class="text-center mx-auto" value="#{consulta.resumen}" />
+
+        </p:column>
+
+
+    </p:dataTable>
+</h:body>

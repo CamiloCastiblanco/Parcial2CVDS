@@ -18,9 +18,7 @@ package edu.eci.pdsw.samples.entities;
 
 import java.sql.Date;
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  *

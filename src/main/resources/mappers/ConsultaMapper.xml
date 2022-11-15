@@ -22,4 +22,15 @@
         WHERE p.id = #{id} AND p.tipo_id = #{tipo_id}
         ORDER BY c.fecha_y_hora DESC;
     </select>
+    <select id="getConsultas" resultMap="ConsultaResult">
+        SELECT
+        p.id,
+        p.nombre,
+        p.fecha_nacimiento
+        FROM
+        PACIENTES as p
+        INNER JOIN Consultas as c ON p.id = c.PACIENTES_id
+        WHERE c.resumen = "Hepatitis" OR c.resumen = "Viruela"
+        ORDER BY p.fecha_nacimiento DESC;
+    </select>
 </mapper>

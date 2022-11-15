@@ -21,5 +21,13 @@
         FROM
             PACIENTES as p
     </select>
-
+    <select id="getEnfermosContagiosos" resultMap="PacienteResult">
+        SELECT
+        p.id,
+        p.tipo_id,
+        p.fecha_nacimiento,
+        p.nombre
+        FROM
+        PACIENTES as p
+    </select>
 </mapper>
